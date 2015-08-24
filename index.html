@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+ <meta charset="UTF-8"> 
 <html>
   <head>
     <title>Photos</title>
@@ -6,15 +7,22 @@
   </head>
   <body>
     <h1>Photos</h1>
-    
-    <div id="photos"></div>
 
-	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    
+    <FORM>
+<input type="text" name="settag" id="tag" value="Enter Tag" />
+<input type="button" value="Find" onclick="window.location.reload();" />
+</FORM>
+<br>
+    <div id="photos"></div>
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
     <script src="photos.js"></script>
     <script>
-    setupPhotos(['squirrel', 'cat'], function (err, result) {
+    var tag = document.getElementById("tag").value; 
+    setupPhotos([tag], function (err, result) {
         if (err) { return console.error(err); }
     });
-    </script>
+</script>
+	
   </body>
 </html>
